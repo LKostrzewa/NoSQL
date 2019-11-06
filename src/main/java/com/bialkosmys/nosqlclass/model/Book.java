@@ -1,9 +1,7 @@
 package com.bialkosmys.nosqlclass.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -14,7 +12,14 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class Book {
 
     @PrimaryKey
-    private String id;
+    private int id;
     private String title;
+    private String authors;
+    private float avgRating;
+    private String isbn;
+    private String isbn13;
+    private String language;
     private int pages;
+    private int countRating;
+    private int countTextReview;
 }
