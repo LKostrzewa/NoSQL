@@ -8,6 +8,8 @@ class NosqlclassApplicationTests {
 
     @Test
     void contextLoads() {
+		int test = 0;
+
     }
 
 }
