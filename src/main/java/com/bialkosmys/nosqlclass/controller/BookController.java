@@ -26,7 +26,8 @@ public class BookController {
 
     @PostMapping
     public void addBook(@RequestBody Book book){
-        repository.insert(book);
+        if(repository.findById(book.getId()).isEmpty())
+            repository.insert(book);
     }
 
     @GetMapping(path = "{id}")
@@ -34,15 +35,10 @@ public class BookController {
         return repository.findById(id).orElse(null);
     }
 
-    @PostMapping(path = "{id}")
-    public void updateBook(@PathVariable("id") int id, @RequestBody Book book){
-        repository.findById(id).ifPresent(b -> {
-            Book tmp = new Book(id, book.getTitle(), book.getAuthors(), book.getAvgRating(),
-                    book.getIsbn(), book.getIsbn13(), book.getLanguage(), book.getPages(),
-                    book.getCountRating(), book.getCountTextReview());
-            repository.delete(b);
-            repository.insert(tmp);
-        });
+    @PutMapping
+    public void updateBook(@RequestBody Book book){
+        if(repository.findById(book.getId()).isPresent())
+            repository.insert(book);
     }
 
     @DeleteMapping(path = "{id}")
