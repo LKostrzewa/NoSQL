@@ -29,10 +29,10 @@
             <artifactId>spring-data-cassandra</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.datastax.cassandra</groupId>
             <artifactId>cassandra-driver-extras</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>com.datastax.cassandra</groupId>

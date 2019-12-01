@@ -1,4 +1,4 @@
-spackage com.bialkosmys.nosqlclass.controller;
+package com.bialkosmys.nosqlclass.controller;
 
 
 import com.bialkosmys.nosqlclass.model.Book;
