@@ -6,6 +6,7 @@ docker build -f Dockerfile -t books-cassandra .
 
 Następnie budujemy obraz api. W katalogu NoSQL:
 
+mvn clean install
 docker build -f Dockerfile -t books-api .
 
 I potem, będąc w tym samym katalogu odpalamay docker compose:
