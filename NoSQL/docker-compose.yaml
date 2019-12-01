@@ -1,19 +1,18 @@
 version: '2'
 services:
   node1:
-    image: cassandra
+    image: books-cassandra
     ports:
       - "9042:9042"
-    environment:
-      CASSANDRA_CLUSTER_NAME: demo
-      CASSANDRA_SEEDS: node1,node2
+    volumes:
+      - "./cassandra-init.sh:/cassandra-init.sh"
+    command: "sh /cassandra-init.sh"
     restart: unless-stopped
 
   node2:
-    image: cassandra
+    image: books-cassandra
     environment:
-      CASSANDRA_CLUSTER_NAME: demo
-      CASSANDRA_SEEDS: node1,node2
+      CASSANDRA_SEEDS: node1
     restart: unless-stopped
 
   app:

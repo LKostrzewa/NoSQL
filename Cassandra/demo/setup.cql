@@ -1,5 +1,5 @@
 -- keyspace is like a database
-CREATE KEYSPACE booksreviews WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': 1};
+CREATE KEYSPACE booksreviews WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': 1};
 
 -- switch to the newly created keyspace
 USE booksreviews;

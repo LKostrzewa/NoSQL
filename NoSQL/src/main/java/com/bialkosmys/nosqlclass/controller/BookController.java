@@ -1,4 +1,4 @@
-package com.bialkosmys.nosqlclass.controller;
+spackage com.bialkosmys.nosqlclass.controller;
 
 
 import com.bialkosmys.nosqlclass.model.Book;
@@ -50,5 +50,4 @@ public class BookController {
     public void deleteAllBooks(){
         repository.deleteAll();
     }
-
 }
