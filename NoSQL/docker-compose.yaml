@@ -1,24 +1,23 @@
 version: '2'
 services:
   node1:
-    image: medvekoma/cassandra-demo
+    image: cassandra
     ports:
       - "9042:9042"
-      - "9160:9160"
     environment:
       CASSANDRA_CLUSTER_NAME: demo
-      CASSANDRA_SEEDS: node1,node2,node3
+      CASSANDRA_SEEDS: node1,node2
     restart: unless-stopped
 
   node2:
-    image: medvekoma/cassandra-demo
+    image: cassandra
     environment:
       CASSANDRA_CLUSTER_NAME: demo
-      CASSANDRA_SEEDS: node1,node2,node3
+      CASSANDRA_SEEDS: node1,node2
     restart: unless-stopped
 
   app:
-    image: medvekoma/nobel-app
+    image: books-api
     ports:
-      - "3000:3000"
+      - "8080:8080"
     restart: unless-stopped
